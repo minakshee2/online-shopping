@@ -17,6 +17,7 @@ export class ShoppingCartComponent implements OnInit {
   isDelete: boolean = false;
   counter: number = 0;
   qtyAvailable: number = 0;
+  isCartEmpty: boolean = false;
 
   constructor(
     private cartService: CartService,
@@ -28,6 +29,10 @@ export class ShoppingCartComponent implements OnInit {
     this.cartService.cart$.subscribe((items) => {
       this.cartItems = items;
     });
+
+    if( this.cartItems.length == 0 ){
+      this.isCartEmpty = true;
+    }
   }
 
   getItemQty(qty: number) {

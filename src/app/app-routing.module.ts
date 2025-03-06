@@ -10,28 +10,26 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { FooterSectionComponent } from './footer-section/footer-section.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
-    component: HeadlinesSectionComponent,
-  },
-  { path: 'navbar', component: NavbarComponent },
-  { path: 'register', component: RegisterUserComponent },
-  { path: 'searchedProducts', component: SearchedProductsComponent },
-  { path: 'menu', component: AllMenuComponent },
-  {
-    path: 'displayProduct',
+    component: HomeComponent,
+    children: [
+      { path: 'searchedProducts', component: SearchedProductsComponent },
+      { path: 'menu', component: AllMenuComponent },
+      {
+        path: 'displayProduct',
 
-    component: DisplayProductsComponent,
+        component: DisplayProductsComponent,
+      },
+      { path: 'cart', component: ShoppingCartComponent },
+    ],
   },
-  {
-    path: 'footer',
-    component: FooterSectionComponent,
-  },
+  { path: 'register', component: RegisterUserComponent },
   { path: 'signIn', component: LoginUserComponent },
-  { path: 'cart', component: ShoppingCartComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 

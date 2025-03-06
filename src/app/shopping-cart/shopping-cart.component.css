@@ -81,3 +81,34 @@
 .subtotal .totalPrice {
   font-weight: bold;
 }
+
+.empty-cart {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cart-logo {
+  background-image: url("/assets/images/empty-cart.jpg");
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+}
+
+.msg {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button {
+  height: 30px;
+  width: 200px;
+  text-align: center;
+  margin-top: 25px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(245, 218, 10);
+}

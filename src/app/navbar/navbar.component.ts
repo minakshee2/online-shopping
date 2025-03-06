@@ -10,7 +10,7 @@ import {
 import { AllCategoryServiceTsService } from './../services/all-category-service.ts.service';
 import { ProductsService } from '../services/products.service';
 import { IProducts } from '../models/products.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
   MatDialog,
   MatDialogRef,
@@ -34,7 +34,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     private categoryService: AllCategoryServiceTsService,
     private router: Router,
     private matDialog: MatDialog,
-    private usersService: UsersServicesService
+    private usersService: UsersServicesService,
+    private route: ActivatedRoute
   ) {}
 
   ngAfterViewInit(): void {}
@@ -61,6 +62,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   onSearch() {
     this.router.navigate(['/searchedProducts'], {
       queryParams: { category: this.selctedCategory, text: this.enteredText },
+      relativeTo: this.route,
     });
   }
 
@@ -78,10 +80,10 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   getUserName() {
     this.userName = this.usersService.getUserName();
-    console.log('user name ', this.userName);
+    //console.log('user name ', this.userName);
   }
 
   displayCart() {
-    this.router.navigate(['cart']);
+    this.router.navigate(['home/cart']);
   }
 }
