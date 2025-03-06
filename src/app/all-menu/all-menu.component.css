@@ -1,0 +1,50 @@
+.menu {
+  height: 800px;
+  width: 300px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.header {
+  height: 50px;
+  background-color: #232f23;
+  color: white;
+}
+
+.header-row {
+  margin-left: 25px;
+  padding-top: 10px;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.section1 {
+  height: 50px;
+  width: 300px;
+  padding-top: 25px;
+}
+
+.heading {
+  height: 50px;
+  width: 300px;
+  color: #111111;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 25px;
+  padding: 0px 0px 2px;
+}
+
+.options {
+  margin-left: 25px;
+  padding: 10px;
+
+  /* align-items: flex-start;
+  justify-content: flex-start; */
+}
+
+a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}

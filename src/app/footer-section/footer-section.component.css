@@ -1,0 +1,83 @@
+.footer {
+  margin-top: 0px;
+  /* width:100px; */
+}
+
+.back-to-top {
+  background-color: #37475a;
+  font-size: 14px;
+  height: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer1 {
+  font-size: 14px;
+  background-color: #222f3d;
+  color: white;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  /* flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start; */
+}
+
+.headings {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+ul {
+  margin-top: 15px;
+}
+
+ul a {
+  font-size: 12px;
+  display: block;
+  margin-top: 10px;
+  color: #dddddd;
+}
+
+.footer2 {
+  background-color: #232f3e;
+  border-top: 1px solid white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  background-image: url("/assets/images/shopping-logo.jpg");
+  background-size: cover;
+  height: 50px;
+  width: 120px;
+}
+
+.footer3 {
+  background-color: #131a22;
+  color: white;
+  height: 50px;
+  /* margin-top: 5px; */
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  padding-top: 10px;
+}
+
+a {
+  margin-left: 10px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  padding-top: 5px;
+}

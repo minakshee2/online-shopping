@@ -1,0 +1,37 @@
+<mat-card class="common-card">
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="common-header-image"></div> -->
+    <mat-card-title>{{ title }}</mat-card-title>
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <!-- <img mat-card-image [src]="getImagePath()" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content>
+    <div class="image1">
+      <img [src]="getImagePath('Home-essentials1')">
+      <span>{{ imgDscr1 }}</span>
+    </div>
+
+    <div class="image1">
+      <img [src]="getImagePath('Home-essentials2')">
+      <span>{{ imgDscr2 }}</span>
+    </div>
+
+    <div class="image1">
+      <img [src]="getImagePath('Home-essentials3')">
+      <span>{{ imgDscr3 }}</span>
+    </div>
+
+    <div class="image1">
+      <img [src]="getImagePath('Home-essentials4')">
+      <span>{{ imgDscr4 }}</span>
+    </div>
+
+
+
+  </mat-card-content>
+  <mat-card-actions>
+    <a class="action"> {{ buttonName }}</a>
+    <!-- <button mat-button>{{ buttonName }}</button> -->
+    <!-- <button mat-button>SHARE</button> -->
+  </mat-card-actions>
+</mat-card>

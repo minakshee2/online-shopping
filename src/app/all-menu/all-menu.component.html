@@ -1,0 +1,26 @@
+<div class="menu">
+  <div class="header">
+    <div class="header-row">
+      <i class="fa-solid fa-user"></i>
+      <span> Hello, sign in</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="section1">
+      <span class="heading">Shop by Department</span>
+      <div class="options">
+        <a [routerLink]="['/displayProduct']" [queryParams]="{category : 'clothing',fashionCategory: 'womens'}">Womens
+          Fashion </a>
+        <a [routerLink]="['/displayProduct']" [queryParams]="{category : 'clothing',fashionCategory: 'mens'}">Mens
+          Fashion </a>
+        <a [routerLink]="['/displayProduct']" [queryParams]="{category : 'clothing',fashionCategory: 'girls'}">Girls
+          Fashion </a>
+        <a [routerLink]="['/displayProduct']" [queryParams]="{category : 'clothing',fashionCategory: 'boys'}">Boys
+          Fashion </a>
+
+        <a [routerLink]="['/displayProduct']" [queryParams]="{category: 'electronics'}">Electronics </a>
+      </div>
+    </div>
+  </div>
+</div>

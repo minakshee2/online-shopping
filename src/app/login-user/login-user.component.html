@@ -1,0 +1,14 @@
+<div class="register">
+  <!-- <div class="logo"></div> -->
+  <div class="account">
+    <div class="heading">Sign in</div>
+    <label for="email" class="label" >Email or mobile phone number</label>
+    <input type="text" id="email" class="input" [(ngModel)]="emailPhone">
+
+    <label for="password" class="label">Password</label>
+    <input type="text" id="password" class="input" [(ngModel)]="password">
+
+    <button class="button" (click)="onUserSignIn()">Sign in</button>
+
+  </div>
+</div>

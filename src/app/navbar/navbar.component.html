@@ -1,0 +1,60 @@
+<header>
+  <div class="navbar">
+    <div class="nav-logo border">
+      <div class="logo"></div>
+    </div>
+
+    <div class="nav-address border">
+      <span class="add1">Deliver to</span>
+      <div class="add-icon">
+        <i class="fa-solid fa-location-dot"></i>
+        <span class="add2">India</span>
+      </div>
+    </div>
+
+    <div class="nav-search">
+
+      <select name="type" id="type" class="search-select" (change)="onChangeCatgory($event)">
+        <option *ngFor="let category of allCategory" [value]="category">{{ category }}</option>
+      </select>
+
+      <input class="search-input" placeholder="Search here" [(ngModel)]="enteredText">
+      <div class="search-icon">
+        <button (click)="onSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+      </div>
+    </div>
+
+    <div class="nav-language border">
+      <div class="nav-flag"></div>
+      <select name="select-language" class="select-language">
+        <option>EN</option>
+      </select>
+    </div>
+
+    <div class="nav-signin border">
+      <button class="hello" (click)="openDialog()" *ngIf="!userName; else name">Hello, sign in</button>
+      <ng-template #name>
+        Hello,{{userName}}
+      </ng-template>
+      <div class="account">
+        <span>Account & Lists</span>
+        <div class="down-arrow">
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-returns border">
+      <span class="return">Returns</span>
+      <div class="orders">
+        <span>& Orders</span>
+      </div>
+    </div>
+
+    <div class="nav-cart border">
+      <i class="cart-icon" class="fa-solid fa-cart-shopping"></i>
+      <button class="cart-label" (click)="displayCart()">Cart</button>
+    </div>
+  </div>
+</header>

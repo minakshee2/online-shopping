@@ -1,0 +1,175 @@
+.navbar {
+  height: 60px;
+  background-color: #0f1111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-logo {
+  height: 50px;
+  width: 120px;
+}
+
+.logo {
+  background-image: url("/assets/images/shopping-logo.jpg");
+  background-size: cover;
+  height: 50px;
+  width: 120px;
+}
+
+.border:hover {
+  border: 1px solid white;
+}
+
+/*Box2*/
+
+.add1 {
+  color: #cccccc;
+  font-size: 0.85rem;
+  margin-left: 25px;
+}
+
+.add2 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-left: 3px;
+}
+
+.add-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+/*Box3*/
+.nav-search {
+  display: flex;
+  height: 40px;
+  width: 800px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: 15px;
+  align-items: center;
+}
+
+.search-select {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  height: 35px;
+  text-align: center;
+  border: none;
+  box-sizing: border-box;
+  background-color: #e6e6e6;
+}
+
+.search-input {
+  height: 35px;
+  width: 700px;
+  border: none;
+  /* border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px; */
+  box-sizing: border-box;
+}
+
+.search-icon {
+  height: 35px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: rgb(240, 136, 10);
+  font-size: 1.2rem;
+  color: #0f1111;
+}
+
+/* Box4  */
+
+.nav-language {
+  display: flex;
+  align-items: center;
+}
+
+.nav-flag {
+  background-image: url("/assets/images/USA-flag.png");
+  background-size: cover;
+  height: 16px;
+  width: 21px;
+}
+
+.select-language {
+  height: 15px;
+  width: 37px;
+  font-size: 10px;
+  font-weight: bolder;
+}
+
+/* Box 5 */
+.nav-signin {
+  margin-left: 10px;
+}
+
+.hello {
+  font-size: 12px;
+  border: none;
+  background-color: #0f1111;
+  color: white;
+  font-weight: bolder;
+}
+
+.account {
+  display: flex;
+  /* align-items: center; */
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.down-arrow {
+  margin-left: 5px;
+}
+
+/* Box 6 */
+.nav-returns {
+  margin-left: 10px;
+}
+
+.return {
+  font-size: 12px;
+}
+
+.orders {
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+/* Box 7 */
+
+.nav-cart {
+  margin-left: 10px;
+}
+
+.cart-icon {
+  height: 25px;
+  width: 35px;
+}
+
+.cart-label {
+  font-size: 14px;
+  margin-left: 3px;
+  border: none;
+  background-color: #0f1111;
+  color: white;
+}
+
+.mat-dialog-container {
+  height: initial;
+  overflow: initial;
+}
+
+.mat-dialog-content {
+  overflow: auto;
+}

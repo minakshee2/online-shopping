@@ -1,0 +1,77 @@
+.register {
+  height: 600px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  background-image: url("/assets/images/shopping-logo.jpg");
+  background-size: cover;
+  height: 50px;
+  width: 120px;
+}
+
+.account {
+  height: 500px;
+  width: 350px;
+  border: 1px solid black;
+  border-radius: 1.5%;
+  margin-top: 50px;
+}
+
+.heading {
+  height: 40px;
+  width: 312px;
+  font-size: 28px;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.label {
+  height: 22px;
+  width: 312px;
+  padding: 0px 0px 5% 5px;
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.input {
+  height: 22px;
+  width: 312px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-left: 5px;
+  padding: 3px 7px;
+  margin-bottom: 10px;
+}
+
+.alert {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+.button {
+  height: 30px;
+  width: 325px;
+  text-align: center;
+  margin-left: 5px;
+  border: none;
+  border-radius: 16px;
+  background-color: rgb(245, 218, 10);
+}
+
+.check {
+  margin-top: 20px;
+  margin-left: 5px;
+  border-top: 1px solid gray;
+  padding: 2px 2px;
+}
+
+.checktxt {
+  margin-top: 5px;
+}

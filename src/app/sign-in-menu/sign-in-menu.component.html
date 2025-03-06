@@ -1,0 +1,30 @@
+<div class="main">
+  <div class="header">
+    <button class="button" (click)="callSignIn()">Sign in</button>
+    <div class="check-new-customer">New customer? <a [routerLink]="['register']" (click)="callRegisterUser()">Start
+        here.</a></div>
+  </div>
+  <div class="border"></div>
+  <div class="mainbox">
+    <div class="leftmenu">
+      <ul>
+        <label id="account">Your Lists </label>
+        <a>Create a List </a>
+        <a>Find a List or Registry </a>
+      </ul>
+    </div>
+    <div class="border-vertical"></div>
+    <div class="rightmenu">
+      <ul>
+        <label id="account">Your account </label>
+        <a>Account </a>
+        <a>Orders </a>
+        <a>Watchlist </a>
+        <a>Memberships & Subscriptions </a>
+      </ul>
+    </div>
+
+  </div>
+
+
+</div>

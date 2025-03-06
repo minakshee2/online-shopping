@@ -1,0 +1,14 @@
+<mat-card class="common-card">
+  <mat-card-content>
+    <div class="image">
+      <img [src]="product.img">
+    </div>
+    <div class="details">
+      <span class="name">{{product.name | titlecase}}</span>
+      <div class="price"><span>{{product.price | currency}}</span></div>
+    </div>
+
+    <button class="button-1"><button class="button-2" (click)="removeFromCart()">-</button> {{ counter }} <button
+        class="button-2" (click)="addToCart()">+</button></button>
+  </mat-card-content>
+</mat-card>

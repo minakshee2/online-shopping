@@ -1,0 +1,83 @@
+.main {
+  background-color: lightgray;
+}
+
+.container {
+  height: auto;
+  width: 1200px;
+  background-color: white;
+  /* margin: 10px 20px 50px 20px; */
+  border: 1px solid black;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.header {
+  font-size: 21px;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.price {
+  text-align: right;
+  width: 1150px;
+  font-size: 12px;
+}
+
+.line {
+  border-top: 1px solid grey;
+  margin: 15px;
+}
+
+.detail {
+  height: 250px;
+  width: 1180px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  border: 1px solid red;
+}
+
+.img {
+  height: 200px;
+  width: 200px;
+  margin-left: 25px;
+  border: 1px solid black;
+  background-size: cover;
+}
+
+.detail-1 {
+  height: 200px;
+  width: 700px;
+  margin-left: 25px;
+}
+
+.name {
+  width: 700px;
+}
+
+.price {
+  text-align: right;
+}
+
+.price-p {
+  height: 25px;
+  width: 280px;
+  text-align: right;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 75px;
+  margin-right: 25px;
+  border: 1px solid black;
+}
+
+.subtotal {
+  width: 1180px;
+  text-align: right;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.subtotal .totalPrice {
+  font-weight: bold;
+}
