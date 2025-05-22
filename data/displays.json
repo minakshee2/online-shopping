@@ -1,0 +1,65 @@
+[
+{
+"_id":1,
+"category": "homeEssentials",
+"title": "Shop for home-essentials",
+"image1":"Home-essentials1",
+"imageDescr1":"Cleaning Tools",
+"image2":"Home-essentials2",
+"imageDescr2":"Home Storage",
+"image3":"Home-essentials3",
+"imageDescr3":"Home Decor",
+"image4":"Home-essentials4",
+"imageDescr4":"Bedding",
+"button-name": "Discover more in home"
+},
+{
+"_id":2,
+"category": "beauty",
+"title": "Shop deals on Beauty Products",
+"image1":"beauty1",
+"imageDescr1":"Mascara",
+"image1":"beauty2",
+"imageDescr2":"Jelly Cream",
+"image1":"beauty3",
+"imageDescr3":"Overnight Butter Balm",
+"image1":"beauty4",
+"imageDescr4":"Lip Balm",
+"button-name": "Discover more in beauty"
+},
+
+{
+"_id":3,
+"category": "clothing",
+"title": "Shop deals on clothing",
+"image1":"clothing14",
+"imageDescr1":"Tshirts",
+"image2":"clothing3",
+"imageDescr2":"Jeans",
+"image3":"clothing7",
+"imageDescr3":"Maxi Dresses",
+"image4":"clothing6",
+"imageDescr4":"Frock",
+"button-name": "Discover more in clothing"
+},
+
+{
+"_id":4,
+"category": "homeDecor",
+"title": "Shop deals on decor",
+"image1":"decor1",
+"imageDescr1":"Lamp",
+"image2":"decor2",
+"imageDescr2":"Tabletop Water Fountain",
+"image3":"decor3",
+"imageDescr3":"Flowers with Vase",
+"image4":"decor4",
+"imageDescr4":"Crystal Tree",
+"button-name": "Discover more in decor"
+}
+
+
+
+
+]
+

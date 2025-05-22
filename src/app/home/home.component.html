@@ -1,15 +1,30 @@
-<app-navbar></app-navbar>
-<app-navigation></app-navigation>
-<!-- <app-headlines-section></app-headlines-section> -->
-<router-outlet></router-outlet>
-<app-footer-section></app-footer-section>
-
-<!-- <app-navbar></app-navbar>
-<app-navigation></app-navigation> -->
-<!-- <div class="headlines">
-
-  <div class="headline-msg"><app-headline-msg-section></app-headline-msg-section>
-
-    <div class="shopping-section"><app-shopping-section></app-shopping-section></div>
+<!-- <div class="main-container"> -->
+<div class="grid">
+  <div class="row">
+    <div class="col-12">
+      <app-navbar></app-navbar>
+      <app-navigation></app-navigation>
+    </div>
   </div>
-</div> -->
+  <div class="row">
+    <div class="col-2" *ngIf="globalVariables.isMenuOpen === true">
+      <app-all-menu></app-all-menu>
+    </div>
+    <div class="col-10">
+      <!-- <app-headlines-section></app-headlines-section> -->
+
+
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- <div class="col-10" *ngIf="globalVariables.isDefaultHeadlines === true">
+      <app-headlines-section></app-headlines-section>
+      <app-shopping-section></app-shopping-section>
+    </div> -->
+  </div>
+
+</div>
+<!-- </div> -->
+
+
+<app-footer-section></app-footer-section>

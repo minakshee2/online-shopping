@@ -10,18 +10,21 @@
     <div class="section1">
       <span class="heading">Shop by Department</span>
       <div class="options">
-        <a [routerLink]="['/home/displayProduct']"
-          [queryParams]="{category : 'clothing',fashionCategory: 'womens'}">Womens
-          Fashion </a>
-        <a [routerLink]="['/home/displayProduct']" [queryParams]="{category : 'clothing',fashionCategory: 'mens'}">Mens
-          Fashion </a>
-        <a [routerLink]="['/home/displayProduct']"
-          [queryParams]="{category : 'clothing',fashionCategory: 'girls'}">Girls
-          Fashion </a>
-        <a [routerLink]="['/home/displayProduct']" [queryParams]="{category : 'clothing',fashionCategory: 'boys'}">Boys
-          Fashion </a>
+        <a [routerLink]="['/home/displayProduct']" [queryParams]="{category : 'clothing',fashionCategory: 'womens'}"
+          [class.active]="isActive('clothing', 'womens')"><span>Womens Fashion </span></a>
+        <a [routerLink]="['/home/displayProduct']" [queryParams]="{category : 'clothing',fashionCategory: 'mens'}"
+          [class.active]="isActive('clothing', 'mens')"><span>Mens Fashion </span> </a>
+        <a [routerLink]="['/home/displayProduct']" [queryParams]="{category : 'clothing',fashionCategory: 'girls'}"
+          [class.active]="isActive('clothing', 'girls')"><span>Girls Fashion </span></a>
+        <a [routerLink]="['/home/displayProduct']" [queryParams]="{category : 'clothing',fashionCategory: 'boys'}"
+          [class.active]="isActive('clothing', 'boys')"><span>Boys Fashion </span></a>
 
-        <a [routerLink]="['/home/displayProduct']" [queryParams]="{category: 'electronics'}">Electronics </a>
+        <a [routerLink]="['/home/displayProduct']" [queryParams]="{category: 'electronics'}"
+          [class.active]="isActive('electronics')"><span>Electronics </span></a>
+        <a [routerLink]="['/home/displayProduct']" [queryParams]="{category: 'home decor'}"
+          [class.active]="isActive('home decor')"><span>Home Decor </span></a>
+        <a [routerLink]="['/home/displayProduct']" [queryParams]="{category: 'beauty'}"
+          [class.active]="isActive('beauty')"><span>Beauty </span></a>
       </div>
     </div>
   </div>

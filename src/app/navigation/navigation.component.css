@@ -1,43 +1,16 @@
-/* .panel {
-  height: 40px;
-  background-color: #232f3e;
-  color: white;
-  display: flex;
-  align-items: center;
-}
-
-button {
-  border: none;
-}
-
-.panel-all {
-  height: 14px;
-  width: 40px;
-  font-size: 14px;
-  font-weight: bold;
-  margin-left: 10px;
-  display: inline;
-}
-
-.panel-options {
-  text-decoration: none !important;
-  font-size: 14px;
-  align-items: flex-end;
-}
-
-a {
-  margin-left: 10px;
-} */
-
-/* ====================================================================== */
-
 .panel {
   height: 40px;
   background-color: #232f3e;
-  color: white;
   display: flex;
   align-items: center;
   text-decoration: none;
+}
+
+.btn {
+  height: 40px;
+  background-color: #232f3e;
+  color: white;
+  margin-left: 10px;
 }
 
 /* .panel-all {
@@ -64,6 +37,9 @@ ul {
   display: flex;
   list-style: none;
   text-decoration: none;
+  /* background-color: brown;
+  padding: 0;
+  border: 2px solid blue; */
 }
 
 .collapse ul.navbar-nav > li > a {

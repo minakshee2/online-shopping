@@ -33,13 +33,23 @@ img {
   justify-content: center;
 } */
 
-.button-1 {
+.mainButton {
   width: 80px;
   height: 25px;
   border-radius: 5px;
   background-color: #cccccc;
   margin-left: 150px;
   margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.button-1 {
+  width: 80px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: #cccccc;
+  margin-left: 150px;
+  margin-bottom: 2px;
   font-weight: bold;
 }
 
@@ -50,3 +60,21 @@ img {
   background-color: #cccccc;
   font-weight: bold;
 }
+
+.price-buttons {
+  display: flex;
+  justify-content: space-between; /* Span on left, buttons on right */
+  align-items: center; /* Vertically center content */
+  margin-top: auto; /* Optional: pushes it to bottom if parent is column flex */
+  padding-top: 10px;
+}
+
+.counter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Spacing between - counter + */
+}
+
+/* .button-2 {
+  padding: 4px 8px;
+} */

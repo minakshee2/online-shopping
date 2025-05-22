@@ -1,8 +1,9 @@
 .headlines {
-  background-image: url("/assets/images/Hero1.jpg");
+  /* background-image: url("/assets/images/Hero1.jpg"); */
+  background-color: beige;
   background-size: cover;
-  height: 800px;
-  width: 1380px;
+  height: auto;
+  width: auto;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;

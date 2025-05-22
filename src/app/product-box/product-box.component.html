@@ -5,10 +5,20 @@
     </div>
     <div class="details">
       <span class="name">{{product.name | titlecase}}</span>
-      <div class="price"><span>{{product.price | currency}}</span></div>
     </div>
 
-    <button class="button-1"><button class="button-2" (click)="removeFromCart()">-</button> {{ counter }} <button
-        class="button-2" (click)="addToCart()">+</button></button>
+    <!-- <div class="spacer"></div> -->
+
+    <div class="price-buttons">
+      <span class="price">{{product.price | currency}}</span>
+      <div class="counter-buttons">
+        <button class="button-2" (click)="removeFromCart()">-</button>
+        <span>{{ counter }}</span>
+        <button class="button-2" (click)="addToCart()">+</button>
+      </div>
+    </div>
+
+
+
   </mat-card-content>
 </mat-card>

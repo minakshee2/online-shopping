@@ -4,7 +4,7 @@
       <div class="logo"></div>
     </div>
 
-    <div class="nav-address border">
+    <div class="nav-address nav-items">
       <span class="add1">Deliver to</span>
       <div class="add-icon">
         <i class="fa-solid fa-location-dot"></i>
@@ -12,27 +12,33 @@
       </div>
     </div>
 
-    <div class="nav-search">
+    <div class="nav-search ">
+      <div class="select-container">
 
-      <select name="type" id="type" class="search-select" (change)="onChangeCatgory($event)">
-        <option *ngFor="let category of allCategory" [value]="category">{{ category }}</option>
-      </select>
+        <select name="type" id="type" class="search-select" (change)="onChangeCatgory($event)">
+          <!-- <option>All <i class="fa-solid fa-angle-down"></i> data</option> -->
 
-      <input class="search-input" placeholder="Search here" [(ngModel)]="enteredText">
-      <div class="search-icon">
-        <button (click)="onSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <option *ngFor="let category of allCategory" [value]="category">{{ category }}</option>
+
+        </select>
 
       </div>
+      <input class="search-input" placeholder="Search here" [(ngModel)]="enteredText">
+      <div class="search-icon">
+        <button class="search-btn" (click)="onSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+      </div>
+
     </div>
 
-    <div class="nav-language border">
+    <div class="nav-language nav-items">
       <div class="nav-flag"></div>
       <select name="select-language" class="select-language">
         <option>EN</option>
       </select>
     </div>
 
-    <div class="nav-signin border">
+    <div class="nav-signin nav-items">
       <button class="hello" (click)="openDialog()" *ngIf="!userName; else name">Hello, sign in</button>
       <ng-template #name>
         Hello,{{userName}}
@@ -45,14 +51,14 @@
       </div>
     </div>
 
-    <div class="nav-returns border">
+    <div class="nav-returns nav-items">
       <span class="return">Returns</span>
       <div class="orders">
         <span>& Orders</span>
       </div>
     </div>
 
-    <div class="nav-cart border">
+    <div class="nav-cart nav-items">
       <i class="cart-icon" class="fa-solid fa-cart-shopping"></i>
       <button class="cart-label" (click)="displayCart()">Cart</button>
     </div>

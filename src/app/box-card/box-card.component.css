@@ -1,14 +1,14 @@
 .common-card {
   height: 380px;
-  width: 320px;
+  width: 330px;
   background-color: white;
-  
   /* border: 2px solid black; */
-  /* display: flex;
+  /*  */
+  display: flex;
   flex-direction: row;
-  flex-wrap: wrap; */
-  /* align-items: flex-start;
-  justify-content: flex-start; */
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 mat-card-title {
@@ -18,7 +18,7 @@ mat-card-title {
 
 mat-card-content {
   height: 330px;
-  width: 320px;
+  /* width: 320px; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -27,9 +27,14 @@ mat-card-content {
 }
 
 .image1 {
-  height: 150px;
+  height: 125px;
   width: 145px;
   font-size: 12px;
+  /* border: 2px solid black; */
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* background-size: cover; */
 }
 
 .image2 {

@@ -8,8 +8,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { AllCategoryServiceTsService } from './../services/all-category-service.ts.service';
-import { ProductsService } from '../services/products.service';
-import { IProducts } from '../models/products.model';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   MatDialog,
@@ -60,7 +59,9 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   }
 
   onSearch() {
-    this.router.navigate(['/searchedProducts'], {
+    console.log('star for search');
+
+    this.router.navigate(['searchedProducts'], {
       queryParams: { category: this.selctedCategory, text: this.enteredText },
       relativeTo: this.route,
     });

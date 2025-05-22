@@ -1,0 +1,18 @@
+/* .grid {
+  
+  width: 100%;
+}  */
+
+/* .main-container {
+  align-items: left;
+  width: 100%;
+  background-color: aqua;
+} */
+
+.col-2 {
+  border: 2px solid blue;
+}
+
+.col-10 {
+  border: 2px solid red;
+}

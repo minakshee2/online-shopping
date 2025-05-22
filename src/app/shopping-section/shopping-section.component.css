@@ -1,7 +1,16 @@
 .boxes {
-  display: flex;
-  width: 1320px;
+  /* display: flex;
   align-items: flex-start;
-  justify-content: space-evenly;
-  
+  justify-content: space-evenly; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 50px;
+  background-color: beige;
+}
+
+.products {
+  padding: 20px;
 }
