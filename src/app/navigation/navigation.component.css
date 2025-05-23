@@ -13,30 +13,11 @@
   margin-left: 10px;
 }
 
-/* .panel-all {
-  height: 14px;
-  width: 40px;
-  font-size: 14px;
-  font-weight: bold;
-  margin-left: 10px;
-  display: inline;
-} */
-
-/* .panel-options {
-  text-decoration: none !important;
-  font-size: 14px;
-  align-items: flex-end;
-} */
-
-/* ul li {
-  display: inline;
-  list-style-type: none;
-} */
-
 ul {
   display: flex;
   list-style: none;
   text-decoration: none;
+
   /* background-color: brown;
   padding: 0;
   border: 2px solid blue; */

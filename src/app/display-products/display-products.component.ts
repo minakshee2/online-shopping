@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { IProducts } from '../models/products.model';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products.service';
-import { GlobalVariablesService } from '../services/global-variables.service';
 
 @Component({
   selector: 'app-display-products',
@@ -17,8 +16,7 @@ export class DisplayProductsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductsService,
-    private globalVariables: GlobalVariablesService
+    private productService: ProductsService
   ) {
     //this.globalVariables.isDefaultHeadlines = false;
   }

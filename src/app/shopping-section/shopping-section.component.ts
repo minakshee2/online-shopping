@@ -16,12 +16,9 @@ export class ShoppingSectionComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.products = this.displayProducts.getAllDisplayProducts();
-    }, 2000);
+    }, 1000);
     console.log('display products ', this.products);
   }
 
-  // getDisplayDetails = async(req,res) =>{
-  //  this.products = await this.displayProducts.getAllDisplayProducts();
-  //  req.send(this.products);
-  // }
+  
 }

@@ -10,9 +10,10 @@
 } */
 
 .col-2 {
-  border: 2px solid blue;
+  padding: 0%;
 }
 
 .col-10 {
-  border: 2px solid red;
+  /* background-color: rgb(246, 246, 226); */
+  padding: 0%;
 }

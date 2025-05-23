@@ -19,9 +19,10 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     children: [
+      { path: '', component: ShoppingSectionComponent },
       { path: 'searchedProducts', component: SearchedProductsComponent },
       { path: 'menu', component: AllMenuComponent },
-      { path: 'headlines', component: HeadlinesSectionComponent },
+
       {
         path: 'displayProduct',
 

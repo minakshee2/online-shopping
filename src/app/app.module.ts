@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,7 @@ import { SignInMenuComponent } from './sign-in-menu/sign-in-menu.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 import { DisplayAllComponent } from './display-all/display-all.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,7 @@ import { DisplayAllComponent } from './display-all/display-all.component';
   ],
 
   imports: [BrowserModule, AppRoutingModule, MatCardModule, FormsModule],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,20 +1,24 @@
 import { Injectable, OnInit } from '@angular/core';
 import { IProducts } from '../models/products.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-  constructor() {
+  constructor(private http: HttpClient) {
     // this.getProducts();
   }
 
   products: IProducts[] = [];
 
-  getProducts = async () => {
-    const productsData = await fetch('http://localhost:3001/api/v1/products');
-    this.products = await productsData.json();
-  };
+  private apiUrl = 'http://localhost:3001/api/v1/products';
+
+  getProducts(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
+  }
+
 
   filteredProducts: IProducts[] = [];
 
