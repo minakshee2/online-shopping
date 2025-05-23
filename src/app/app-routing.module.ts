@@ -5,7 +5,6 @@ import { AllMenuComponent } from './all-menu/all-menu.component';
 import { DisplayProductsComponent } from './display-products/display-products.component';
 import { SignInMenuComponent } from './sign-in-menu/sign-in-menu.component';
 import { LoginUserComponent } from './login-user/login-user.component';
-import { HeadlinesSectionComponent } from './headlines-section/headlines-section.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { FooterSectionComponent } from './footer-section/footer-section.component';

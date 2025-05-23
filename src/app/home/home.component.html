@@ -1,23 +1,27 @@
 <div class="main-container">
-  <div class="grid">
-    <div class="row">
-      <div class="col-12">
-        <app-navbar></app-navbar>
-        <app-navigation></app-navigation>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-2" *ngIf="stateService.showComponent">
-        <app-all-menu></app-all-menu>
-      </div>
-      <div class="col-10">
-        <router-outlet></router-outlet>
-      </div>
+  <header>
+    <app-navbar></app-navbar>
+    <app-navigation></app-navigation>
+  </header>
+  <div>
+    <main class="min-vh-100">
+      <div class="grid">
+        <div class="row">
 
 
-    </div>
+          <div class="col-2" *ngIf="stateService.showComponent">
+            <app-all-menu></app-all-menu>
+          </div>
+          <div class="col-10">
+            <router-outlet></router-outlet>
+          </div>
 
+        </div>
+      </div>
+    </main>
+
+
+
+
+    <footer><app-footer-section></app-footer-section></footer>
   </div>
-
-
-  <app-footer-section></app-footer-section>
