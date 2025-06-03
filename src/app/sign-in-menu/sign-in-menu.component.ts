@@ -17,7 +17,7 @@ export class SignInMenuComponent {
 
   callSignIn() {
     this.isSignIn = true;
-    this.router.navigate(['signIn']);
+    this.router.navigate(['signin']);
     this.closeDialog();
   }
 

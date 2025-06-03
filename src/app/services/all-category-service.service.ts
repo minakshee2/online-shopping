@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class AllCategoryServiceTsService {
+export class AllCategoryServiceService {
   constructor() {}
 
   allCategory = ['All', 'Electronics', 'Clothing', 'Home Decor', 'Beauty'];

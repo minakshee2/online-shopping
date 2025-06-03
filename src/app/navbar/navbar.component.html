@@ -41,7 +41,7 @@
     <div class="nav-signin nav-items">
       <button class="hello" (click)="openDialog()" *ngIf="!userName; else name">Hello, sign in</button>
       <ng-template #name>
-        Hello,{{userName}}
+        Hello, {{userName}}
       </ng-template>
       <div class="account">
         <span>Account & Lists</span>

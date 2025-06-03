@@ -1,5 +1,38 @@
 <div class="register">
-  <!-- <div class="logo"></div> -->
+  <div class="account">
+    <div class="heading">Sign in</div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+
+      <!-- Mobile Number or email -->
+      <div>
+        <label class="label">Mobile number or email</label>
+        <input formControlName="userLoginId" class="input" placeholder="Enter mobile or email">
+
+        <div *ngIf="loginForm.get('userLoginId')?.errors?.['mobileOrEmail']">
+          <div class="alert">Please enter a valid mobile number or email address.</div>
+        </div>
+      </div>
+
+      <!-- Passord -->
+      <div>
+        <label class="label">Password</label>
+        <input formControlName="password" class="input" placeholder="At least 8 characters">
+
+        <div *ngIf="loginForm.get('password')?.errors?.['strongPassword']">
+          <div class="alert">Passwords must be at least 8 characters.</div>
+        </div>
+      </div>
+
+
+      <!-- Submit -->
+      <button type="submit" class="button">Login</button>
+    </form>
+
+  </div>
+</div>
+
+<!-- <div class="register">
   <div class="account">
     <div class="heading">Sign in</div>
     <label for="email" class="label" >Email or mobile phone number</label>
@@ -11,4 +44,4 @@
     <button class="button" (click)="onUserSignIn()">Sign in</button>
 
   </div>
-</div>
+</div> -->

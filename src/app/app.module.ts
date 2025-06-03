@@ -7,13 +7,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { HeadlinesSectionComponent } from './headlines-section/headlines-section.component';
 import { BoxCardComponent } from './box-card/box-card.component';
 import { ShoppingSectionComponent } from './shopping-section/shopping-section.component';
 import { HeadlineMsgSectionComponent } from './headline-msg-section/headline-msg-section.component';
 import { MatCardModule } from '@angular/material/card';
 import { FooterSectionComponent } from './footer-section/footer-section.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchedProductsComponent } from './searched-products/searched-products.component';
 import { ProductBoxComponent } from './product-box/product-box.component';
 import { AllMenuComponent } from './all-menu/all-menu.component';
@@ -31,7 +30,6 @@ import { DisplayAllComponent } from './display-all/display-all.component';
     HomeComponent,
     NavbarComponent,
     NavigationComponent,
-    HeadlinesSectionComponent,
     BoxCardComponent,
     ShoppingSectionComponent,
     HeadlineMsgSectionComponent,
@@ -48,7 +46,13 @@ import { DisplayAllComponent } from './display-all/display-all.component';
     DisplayAllComponent,
   ],
 
-  imports: [BrowserModule, AppRoutingModule, MatCardModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })

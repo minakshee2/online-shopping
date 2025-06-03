@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { IDisplayProducts } from '../models/display.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,11 +10,18 @@ export class DisplayProductsService {
   constructor(private http: HttpClient) {}
 
   displayProducts: any[] = [];
+  displayProducts$: BehaviorSubject<IDisplayProducts[]> = new BehaviorSubject<
+    IDisplayProducts[]
+  >([]);
 
   private apiUrl = 'http://localhost:3000/api/v1/display';
 
-  getDisplayProducts(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getDisplayProducts(): Observable<IDisplayProducts[]> {
+    return this.http.get<IDisplayProducts[]>(this.apiUrl).pipe(
+      tap((data) => {
+        this.displayProducts$.next(data);
+      })
+    );
   }
 
   // getDisplayProducts = async () => {

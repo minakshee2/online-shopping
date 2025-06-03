@@ -52,6 +52,12 @@
 .alert {
   font-size: 12px;
   margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.alert-1 {
+  font-size: 12px;
+  margin-left: 5px;
   margin-bottom: 15px;
 }
 

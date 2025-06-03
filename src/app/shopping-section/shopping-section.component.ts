@@ -14,11 +14,13 @@ export class ShoppingSectionComponent implements OnInit {
   products: IDisplayProducts[] = [];
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.products = this.displayProducts.getAllDisplayProducts();
-    }, 1000);
+    // setTimeout(() => {
+    //   this.products = this.displayProducts.getAllDisplayProducts();
+    // }, 1000);
     console.log('display products ', this.products);
-  }
 
-  
+    this.displayProducts.displayProducts$.subscribe((data) => {
+      this.products = data;
+    });
+  }
 }

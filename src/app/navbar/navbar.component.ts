@@ -7,7 +7,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { AllCategoryServiceTsService } from './../services/all-category-service.ts.service';
+import { AllCategoryServiceService } from '../services/all-category-service.service';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import {
@@ -18,7 +18,8 @@ import {
 import { SignInMenuComponent } from '../sign-in-menu/sign-in-menu.component';
 import { MatButton } from '@angular/material/button';
 import { Overlay } from '@angular/cdk/overlay';
-import { UsersServicesService } from '../services/users-services.service';
+import { AuthServicesService } from '../services/authservices.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-navbar',
@@ -30,11 +31,12 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   totalCartItems: number = 0;
 
   constructor(
-    private categoryService: AllCategoryServiceTsService,
+    private categoryService: AllCategoryServiceService,
     private router: Router,
     private matDialog: MatDialog,
-    private usersService: UsersServicesService,
-    private route: ActivatedRoute
+    private authService: AuthServicesService,
+    private route: ActivatedRoute,
+    private usersService: UsersService
   ) {}
 
   ngAfterViewInit(): void {}
@@ -47,7 +49,12 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.allCategory = this.getAllCategory();
-    this.getUserName();
+    this.usersService.userName$.subscribe((data) => {
+      if (data) {
+        this.userName = localStorage.getItem('userName') || '';
+        console.log('User name from local storage: ', this.userName);
+      }
+    });
   }
 
   getAllCategory() {
@@ -79,11 +86,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     });
   }
 
-  getUserName() {
-    this.userName = this.usersService.getUserName();
-    //console.log('user name ', this.userName);
-  }
-
+ 
   displayCart() {
     this.router.navigate(['home/cart']);
   }

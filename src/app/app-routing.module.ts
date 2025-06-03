@@ -32,7 +32,7 @@ const routes: Routes = [
   },
 
   { path: 'register', component: RegisterUserComponent },
-  { path: 'signIn', component: LoginUserComponent },
+  { path: 'signin', component: LoginUserComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 

@@ -1,5 +1,61 @@
 <div class="register">
-  <!-- <div class="logo"></div> -->
+  <div class="account">
+    <div class="heading">Create Account</div>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <!-- Name -->
+      <div>
+        <label class="label">Your Name</label>
+        <input formControlName="name" class="input" placeholder="First and last name" />
+        <div *ngIf="userForm.get('name')?.errors?.['noNumbersAllowed'] && userForm.get('name')?.touched">
+          <div class="alert">Name must not contain numbers.</div>
+        </div>
+        <div *ngIf="userForm.get('name')?.errors?.['required'] && userForm.get('name')?.touched">
+          <div class="alert">Name is required.</div>
+        </div>
+      </div>
+
+      <!-- Mobile Number or email -->
+      <div>
+        <label class="label">Mobile number or email</label>
+        <input formControlName="contact" class="input" placeholder="Enter mobile or email">
+
+        <div *ngIf="userForm.get('contact')?.errors?.['mobileOrEmail']">
+          <div class="alert">Please enter a valid mobile number or email address.</div>
+        </div>
+      </div>
+
+      <!-- Passord -->
+      <div>
+        <label class="label">Password</label>
+        <input formControlName="password" class="input" placeholder="At least 8 characters">
+
+        <div *ngIf="userForm.get('password')?.errors?.['strongPassword']">
+          <div class="alert">Passwords must be at least 8 characters.</div>
+        </div>
+      </div>
+      <div class="alert-1"><i class="fa-solid fa-circle-exclamation"></i> Passwords must be at least 8 characters.</div>
+      <!-- Re enter Passord -->
+      <div>
+        <label class="label">Re-enter password</label>
+        <input formControlName="confirmPassword" class="input">
+
+        <div *ngIf="userForm.get('confirmPassword')?.errors?.['passwordMismatch']">
+          <div class="alert">Password and confirm password do not match.</div>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="button">Register</button>
+    </form>
+    <div class="check">
+      <div class="checktxt">Already have an account? <a [routerLink]="['/signIn']"> Sign in</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="register">
   <div class="account">
     <div class="heading">Create Account</div>
     <label for="name" class="label">Your name</label>
@@ -24,4 +80,4 @@
 
   </div>
 
-</div>
+</div> -->
