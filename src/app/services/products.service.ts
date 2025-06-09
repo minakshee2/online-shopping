@@ -19,7 +19,6 @@ export class ProductsService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-
   filteredProducts: IProducts[] = [];
 
   getSerchedProducts(category: string, subCategory: string): IProducts[] {
@@ -83,6 +82,8 @@ export class ProductsService {
   }
 
   getStockCheck(productId: number) {
-    return this.products.find((item) => item.id === productId)?.quantity ?? 0;
+    return (
+      this.products.find((item) => item.productId === productId)?.quantity ?? 0
+    );
   }
 }

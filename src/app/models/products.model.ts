@@ -1,5 +1,5 @@
 export interface IProducts {
-  id: number;
+  productId: number;
   category: string;
   subCategory: string;
   fashionCategory: string;

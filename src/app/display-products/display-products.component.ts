@@ -32,6 +32,7 @@ export class DisplayProductsComponent implements OnInit {
         this.category,
         this.fashionCategory
       );
+      
     });
   }
 }

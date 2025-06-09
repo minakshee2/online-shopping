@@ -26,13 +26,17 @@ export class ShoppingCartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cartService.cart$.subscribe((items) => {
-      this.cartItems = items;
-    });
+    this.loadCart();
+  }
 
-    if( this.cartItems.length == 0 ){
-      this.isCartEmpty = true;
-    }
+  loadCart() {
+    this.cartService.getCartItems().subscribe((items) => {
+      this.cartItems = items;
+
+      // if (this.cartItems.length == 0) {
+      //   this.isCartEmpty = true;
+      // }
+    });
   }
 
   getItemQty(qty: number) {
@@ -43,6 +47,8 @@ export class ShoppingCartComponent implements OnInit {
   addToCart(item: ICart) {
     this.counter = item.qty;
     this.incrementCounter();
+    //this.cartItems[0].qty = this.counter;
+    //item.qty = this.counter;
     this.qtyAvailable = this.productService.getStockCheck(item.productId);
 
     if (this.counter > this.qtyAvailable) {
@@ -58,6 +64,7 @@ export class ShoppingCartComponent implements OnInit {
     };
 
     this.updateCartService.addToCart(this.product);
+    this.loadCart();
   }
 
   removeFromCart(item: ICart) {
@@ -69,15 +76,18 @@ export class ShoppingCartComponent implements OnInit {
       price: item.price,
       qty: this.counter,
     };
-    this.updateCartService.removeFromCart(this.product, this.isDelete);
+    this.updateCartService.removeFromCart(this.product);
+    console.log('refresh  cart');
+
+    this.loadCart();
   }
 
   updateCart(item: ICart) {
     this.counter = item.qty;
 
     this.decrementCounter();
-
-    this.isDelete = false;
+    //item.qty = this.counter;
+    //this.isDelete = false;
 
     this.product = {
       productId: item.productId,
@@ -86,7 +96,13 @@ export class ShoppingCartComponent implements OnInit {
       price: item.price,
       qty: this.counter,
     };
-    this.updateCartService.removeFromCart(this.product, this.isDelete);
+
+    if (this.counter <= 0) {
+      this.updateCartService.removeFromCart(this.product);
+    } else {
+      this.updateCartService.addToCart(this.product);
+    }
+    this.loadCart();
   }
 
   incrementCounter() {
@@ -95,6 +111,9 @@ export class ShoppingCartComponent implements OnInit {
 
   decrementCounter() {
     this.counter--;
+    if (this.counter < 0) {
+      this.counter = 0;
+    }
   }
 
   getCartSummary() {

@@ -31,14 +31,16 @@ export class ProductBoxComponent {
 
   addToCart() {
     this.incrementCounter();
-    this.qtyAvailable = this.productService.getStockCheck(this.product.id);
+    this.qtyAvailable = this.productService.getStockCheck(
+      this.product.productId
+    );
 
     if (this.counter > this.qtyAvailable) {
       this.counter = this.qtyAvailable;
     }
 
     this.productDetails = {
-      productId: this.product.id,
+      productId: this.product.productId,
       name: this.product.name,
       img: this.product.img,
       price: this.product.price,
@@ -50,13 +52,13 @@ export class ProductBoxComponent {
   removeFromCart() {
     this.decrementCounter();
     this.productDetails = {
-      productId: this.product.id,
+      productId: this.product.productId,
       name: this.product.name,
       img: this.product.img,
       price: this.product.price,
       qty: this.counter,
     };
-    this.updateCartService.removeFromCart(this.productDetails, false);
+    this.updateCartService.removeFromCart(this.productDetails);
   }
 
   incrementCounter() {

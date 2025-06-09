@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ICart } from '../models/cart.model';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -10,47 +11,39 @@ export class CartService {
     []
   );
 
+  constructor(private http: HttpClient) {}
+
+  private addToCartUrl = 'http://localhost:3005/api/v1/cart';
+  private apiCartUrl = 'http://localhost:3005/api/v1/cart/items';
+  //private apiUpdateCartUrl = 'http://localhost:3005/api/v1/updatecart';
+  private removeFromCartUrl = 'http://localhost:3005/api/v1/cart';
+
   cart$ = this.cartSubject.asObservable();
+  currentCart: ICart[];
 
-  getCart(): ICart[] {
-    return this.cartSubject.getValue();
+  getCartItems(): Observable<ICart[]> {
+    return this.http.get<ICart[]>(this.apiCartUrl);
+    // return this.http.get<ICart[]>(this.apiCartUrl).pipe(
+    //   tap((data) => {
+    //     this.cartSubject.next(data);
+    //   })
+    // );
   }
 
-  addToCart(item: ICart): void {
-    const currentCart = this.cartSubject.getValue();
-    const itemIndex = currentCart.findIndex(
-      (cartItem) => cartItem.productId === item.productId
-    );
+  addToCart(item: ICart): Observable<ICart[]> {
+    console.log('check for product', item.productId);
 
-    if (itemIndex !== -1) {
-      currentCart[itemIndex].qty = item.qty;
-    } else {
-      currentCart.push(item);
-    }
-
-    this.cartSubject.next([...currentCart]);
-    //console.log(this.getCart());
+    return this.http.post<ICart[]>(this.addToCartUrl, item);
   }
 
-  removeFromCart(item: ICart, isDelete: boolean): void {
-    const currentCart = this.cartSubject.getValue();
-    //console.log(' item qty ', item.qty);
+  removeFromCart(item: ICart): Observable<any> {
+    console.log('remove item ');
+    //const params = new HttpParams().set('productId', item.productId);
+    const params = { productId: item.productId };
 
-    const itemIndex = currentCart.findIndex(
-      (cartItem) => cartItem.productId === item.productId
-    );
-
-    if (
-      itemIndex !== -1 &&
-      currentCart[itemIndex].qty > 1 &&
-      isDelete === false
-    ) {
-      currentCart[itemIndex].qty = item.qty;
-    } else {
-      this.cartSubject.next(
-        currentCart.filter((cartItem) => cartItem.productId !== item.productId)
-      );
-    }
+    const url = `${this.removeFromCartUrl}/${item.productId}`;
+    console.log('&&&&&&&&&&&&&&&&', params, url);
+    return this.http.delete(url);
   }
 
   getCartSummary() {

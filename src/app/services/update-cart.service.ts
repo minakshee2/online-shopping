@@ -10,12 +10,23 @@ export class UpdateCartService {
   constructor(private cartService: CartService) {}
 
   addToCart(product: ICart) {
-    this.cartService.addToCart(product);
+    //this.cartService.addToCart(product);
+    console.log('Adding product to cart ****:', product);
+    this.cartService.addToCart(product).subscribe({
+      next: (response) => {
+        console.log('Success:', response);
+      },
+      error: (error) => {
+        console.error('Error:', error);
+      },
+    });
     //return this.cartService.getCartSummary();
   }
 
-  removeFromCart(product: ICart, isDelete: boolean) {
-    this.cartService.removeFromCart(product, isDelete);
+  removeFromCart(product: ICart) {
+    this.cartService
+      .removeFromCart(product)
+      .subscribe((data) => console.log(data));
     //return this.cartService.getCartSummary();
   }
 
