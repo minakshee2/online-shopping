@@ -12,7 +12,7 @@
     <div class="price-buttons">
       <span class="price">{{product.price | currency}}</span>
       <div class="counter-buttons">
-        <button class="button-2" (click)="removeFromCart()">-</button>
+        <button class="button-2" (click)="updateCart()">-</button>
         <span>{{ counter }}</span>
         <button class="button-2" (click)="addToCart()">+</button>
       </div>

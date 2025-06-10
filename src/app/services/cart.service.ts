@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ICart } from '../models/cart.model';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, filter, map, Observable, tap } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
@@ -30,6 +30,13 @@ export class CartService {
     // );
   }
 
+  getCartQty(productId: number): Observable<ICart[]> {
+    //return this.http.get<ICart[]>(this.apiCartUrl);
+    return this.http
+      .get<ICart[]>(this.apiCartUrl)
+      .pipe(map((data) => data.filter((item) => item.productId === productId)));
+  }
+
   addToCart(item: ICart): Observable<ICart[]> {
     console.log('check for product', item.productId);
 
@@ -47,13 +54,17 @@ export class CartService {
   }
 
   getCartSummary() {
-    return this.cartSubject.value.reduce(
-      (summary, product) => {
-        summary.totalQty += product.qty;
-        summary.totalAmt += product.qty * product.price;
-        return summary;
-      },
-      { totalQty: 0, totalAmt: 0 }
+      return this.http.get<ICart[]>(this.apiCartUrl).pipe(
+      tap((data) =>
+        data.reduce(
+          (summary, product) => {
+            summary.totalQty += product.qty;
+            summary.totalAmt += product.qty * product.price;
+            return summary;
+          },
+          { totalQty: 0, totalAmt: 0 }
+        )
+      )
     );
   }
 

@@ -19,6 +19,9 @@ export class ShoppingCartComponent implements OnInit {
   qtyAvailable: number = 0;
   isCartEmpty: boolean = false;
 
+  totalQty: number = 0;
+  totalAmt: number = 0;
+
   constructor(
     private cartService: CartService,
     private updateCartService: UpdateCartService,
@@ -32,21 +35,22 @@ export class ShoppingCartComponent implements OnInit {
   loadCart() {
     this.cartService.getCartItems().subscribe((items) => {
       this.cartItems = items;
-
+      //console.log('loadcart ', items[0].qty);
       // if (this.cartItems.length == 0) {
       //   this.isCartEmpty = true;
       // }
     });
   }
 
-  getItemQty(qty: number) {
-    this.counter = qty;
-    return this.counter;
-  }
+  // getItemQty(qty: number) {
+  //   this.counter = qty;
+  //   return this.counter;
+  // }
 
   addToCart(item: ICart) {
     this.counter = item.qty;
     this.incrementCounter();
+    //this.cartItems.qty = this.counter;
     //this.cartItems[0].qty = this.counter;
     //item.qty = this.counter;
     this.qtyAvailable = this.productService.getStockCheck(item.productId);
@@ -63,7 +67,14 @@ export class ShoppingCartComponent implements OnInit {
       qty: this.counter,
     };
 
-    this.updateCartService.addToCart(this.product);
+    this.cartService.addToCart(this.product).subscribe({
+      next: (response) => {
+        console.log('Success:', response);
+      },
+      error: (error) => {
+        console.error('Error:', error);
+      },
+    });
     this.loadCart();
   }
 
@@ -76,7 +87,9 @@ export class ShoppingCartComponent implements OnInit {
       price: item.price,
       qty: this.counter,
     };
-    this.updateCartService.removeFromCart(this.product);
+    this.cartService
+      .removeFromCart(this.product)
+      .subscribe((data) => console.log(data));
     console.log('refresh  cart');
 
     this.loadCart();
@@ -98,9 +111,18 @@ export class ShoppingCartComponent implements OnInit {
     };
 
     if (this.counter <= 0) {
-      this.updateCartService.removeFromCart(this.product);
+      this.cartService
+        .removeFromCart(this.product)
+        .subscribe((data) => console.log(data));
     } else {
-      this.updateCartService.addToCart(this.product);
+      this.cartService.addToCart(this.product).subscribe({
+        next: (response) => {
+          console.log('Success:', response);
+        },
+        error: (error) => {
+          console.error('Error:', error);
+        },
+      });
     }
     this.loadCart();
   }
@@ -117,6 +139,9 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   getCartSummary() {
-    return this.updateCartService.getCartSummary();
-  }
+    this.cartService.getCartSummary().subscribe((summary) => {
+    console.log('summary ', summary);
+    
+  });
+}
 }
